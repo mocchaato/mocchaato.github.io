@@ -1,155 +1,32 @@
+/*
 
+generic terms, override by specifying class 
+
+*/
 * {
-    background-color: black;
-}
-
-.jersey-15-regular {
-    font-family: "Jersey 15", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-
-.info {
-
-}
-
-.topbar {
-    width: 100%;
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    background-color: #00000052;
-    backdrop-filter: blur(8px);
-    z-index: 1;
-    font-family: Roboto;
-}
-
-.header {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    border: 3px white solid;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.logo {
-    flex: auto;
-    margin-left: 10px;
-}
-
-.logo h1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 32px;
-}
-
-.navigation {
-    text-align: end;
-    font-weight: bold;
-    flex: auto;
-    flex-direction: row;
-    margin: auto 50px auto auto;
-}
-
-.navigation a {
-    margin-left: 40px;
-} 
-
-.buttons {
-    margin-left: 50px;
-    margin-right: 10px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.btn {
-    height: 50px;
-    width: 50px;
-    color: black;
-    font-size: 18px;
-    border-radius: 10px;
-    border: 0;
-    background-color: white;
-    margin: auto 10px auto 10px;
-}
-
-.btn:hover {
-    background-color: #555;
-}
-
-.btn:active {
-    background-color: black;
-    color: white;
-}
-
-i {
     background-color: transparent;
-}
-
-.genericsel {
-    float: left;
-    overflow: hidden;
-  }
-
-.dropdown {
-    display: none;
-    position: absolute;
-    background-color: transparent;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin: 0;
-}
-
-.activeareabtn {
-    margin: 10px;
-    background-color: white;
-    border-radius: 10px;
-}
-
-.dropdown button {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: 10px;
-}
-
-
-.genericsel:hover .dropdown {
-    display: block;
-}
-
-.genericsel .btnsel {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
 }
 
 body {
-    display: flex;
-    padding: 0;
+    background-image: url(../pattern.png);
+
+    width: 100vw;
+    height: 100vh;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
-nav {
-    position: fixed;
-    padding: 20px;
+a {
+    text-decoration: none;
+    -o-transition:.25s;
+    -ms-transition:.25s;
+    -moz-transition:.25s;
+    -webkit-transition:.25s;
+    /* ...and now for the proper property */
+    transition:.25s;
+    user-select: none;
 }
 
 a:link {
@@ -161,51 +38,112 @@ a:visited {
 }
 
 a:hover {
-    color: brown;
+    color: #916f4e;
 }
+/*
 
-.initspace {
-    margin-top: 0;
-    width: 100%;
-    height: 1000px;
-    background-image: url(../favicon.ico);
-    background-color: #a89173;
-}
+external font handling
 
-.darkbg {
-    margin-top: 0;
-    background-color: rgba(0, 0, 0, 0.534);
-    width: 100%;
-    height: 1000px;
-}
+*/
 
-.infobox {
-    background-color: rgba(0, 0, 0, 0.534);
-    border-radius: 20px;
-    display: block;
-    margin: 200px auto 0 auto;
-    color: white;
-    text-align: center;
-    letter-spacing: 3px;
-    backdrop-filter: blur(8px);
-    border: white 2px;
-    border-style: dashed;
-}
-
-.infobox h1 {
-    background-color: transparent;
+.jersey-15-regular {
     font-family: "Jersey 15", serif;
-    font-size: 32pt;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.biglogo {
-    background-color: transparent;
+/*
+
+scrollbar handling
+
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #757365;
+    border-radius: 5px;
+
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f0ebc6; 
+    border: #ffffff00 solid 2px;
+    border-radius: 5px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #523732; 
 }
 
-.info {
-    display: flex;
+/*
+
+START OF CLASS STYLING
+
+*/
+/* 
+general classes */
+
+.mainPage {
+    align-content: center;
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
+
+.contentSpace {
+    margin: auto;
+    width: 40%;
+    height: 70%;
+    
+    display: flex;
+    flex-direction: column;
+
+    background-color: #00000050;
+    
+    border: 2px dashed white;
+    border-radius: 20px;
+
+    backdrop-filter: blur(18px);
+}
+
+/* button handling */
+
+.linkButton {
+    padding: 15px;
+    margin: 0 10px 0 10px;
+    background-color: white;
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+.squareButton {
+    padding: 15px;
+    margin: 0 20px 0 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.linkButton:link {
+    color: black;
+}
+
+.linkButton:visited {
+    color: black;
+}
+
+.linkButton:hover {
+    color: #916f4e;
+}
+
+/* divider */
 
 .divider {
     background-color: white;
@@ -214,40 +152,119 @@ a:hover {
     border-radius: 2px;
 }
 
+/* text handling */
+
+.title {
+    font-family: "Jersey 15";
+    color: white;
+    text-align: left;
+    font-size: 300%;
+    font-weight: lighter;
+    margin: 10px;
+}
+
+.genText {
+    font-family: "Jersey 15";
+    font-weight: lighter;
+    color: white;
+    text-align: left;
+    margin: 10px;
+
+    font-size: 20pt;
+    
+}
+
+/* 
+directional classes */
+
+/* "main" main areas */
+
+.mainTop {
+    flex: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+.mainArea {
+    flex: 2;
+}
+.mainBot {
+    flex: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+/* mainTop subdivisions */
+
+.mainQuadI {
+    flex: 2;
+
+    padding: 3%;
+
+    margin-right: 40px;
+
+    background-image: url(../logo.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+.mainQuadII {
+    flex: auto;
+
+    margin: -40px;
+    margin-top: -130px;
+
+    background-image: url(../websiteornament.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+/* mainBot subdivisions */
+
+.mainQuadIII {
+    flex: auto;
+    display: flex;
+
+    background-image: url(../goober.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+
+    margin: -30px;
+    margin-top: 0;
+}
+.mainQuadIV {
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    
+    font-family: Roboto;
+
+    margin-left: 40px;
+}
+
+/* socials */
+
 .social {
-    background-color: transparent;
-    margin: 20px auto 20px auto;
-    display: inline-block;
+    margin: 0 5% 10% auto;
+    color: white;
 }
 
-.socialicon {
-    font-size: 32pt;
-    background-color: transparent;
-    text-decoration: none;
-    letter-spacing: 20px;
+.socialIcon {
+    font-size: 300%;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 5px;
-}
-  
-  /* Track */
- ::-webkit-scrollbar-track {
-    background-color: rgb(163, 149, 128);
-    border-radius: 5px;
+/* nav */
+/* top | right | bottom | left */
 
+.navigation {
+    margin: 0 5% 3% auto;
 }
-   
-  /* Handle */
- ::-webkit-scrollbar-thumb {
-    background: #ffffff; 
-    border: #ffffff00 solid 2px;
-    border-radius: 5px;
-}
-  
-  /* Handle on hover */
- ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}
-
