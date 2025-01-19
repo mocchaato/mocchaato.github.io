@@ -138,7 +138,8 @@ general classes */
 }
 
 .linkButton:hover {
-    color: #916f4e;
+    color: white;
+    background-color: #916f4e;
 }
 
 /* divider */
