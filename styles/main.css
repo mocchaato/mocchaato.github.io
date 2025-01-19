@@ -5,6 +5,7 @@ generic terms, override by specifying class
 */
 * {
     background-color: transparent;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,12 +21,13 @@ body {
 
 a {
     text-decoration: none;
+
     -o-transition:.25s;
     -ms-transition:.25s;
     -moz-transition:.25s;
     -webkit-transition:.25s;
-    /* ...and now for the proper property */
     transition:.25s;
+
     user-select: none;
 }
 
@@ -95,12 +97,12 @@ general classes */
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .contentSpace {
     margin: auto;
-    width: 40%;
-    height: 70%;
     
     display: flex;
     flex-direction: column;
@@ -116,8 +118,6 @@ general classes */
 /* button handling */
 
 .linkButton {
-    padding: 15px;
-    margin: 0 10px 0 10px;
     background-color: white;
     border-radius: 10px;
 
@@ -125,8 +125,6 @@ general classes */
 }
 
 .squareButton {
-    padding: 15px;
-    margin: 0 20px 0 20px;
     background-color: white;
     border-radius: 10px;
 }
@@ -147,7 +145,6 @@ general classes */
 
 .divider {
     background-color: white;
-    margin: 20px 10px 20px 10px;
     border: white solid 1px;
     border-radius: 2px;
 }
@@ -158,7 +155,6 @@ general classes */
     font-family: "Jersey 15";
     color: white;
     text-align: left;
-    font-size: 300%;
     font-weight: lighter;
     margin: 10px;
 }
@@ -169,8 +165,6 @@ general classes */
     color: white;
     text-align: left;
     margin: 10px;
-
-    font-size: 20pt;
     
 }
 
@@ -180,7 +174,7 @@ directional classes */
 /* "main" main areas */
 
 .mainTop {
-    flex: auto;
+    flex: 1;
 
     display: flex;
     flex-direction: row;
@@ -189,7 +183,7 @@ directional classes */
     flex: 2;
 }
 .mainBot {
-    flex: auto;
+    flex: 1;
 
     display: flex;
     flex-direction: row;
@@ -198,27 +192,14 @@ directional classes */
 /* mainTop subdivisions */
 
 .mainQuadI {
-    flex: 2;
-
-    padding: 3%;
-
-    margin-right: 40px;
-
-    background-image: url(../logo.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: contain;
+    flex: auto;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
 }
 .mainQuadII {
     flex: auto;
-
-    margin: -40px;
-    margin-top: -130px;
-
-    background-image: url(../websiteornament.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: contain;
+    overflow: visible !important;
 }
 
 /* mainBot subdivisions */
@@ -226,17 +207,9 @@ directional classes */
 .mainQuadIII {
     flex: auto;
     display: flex;
-
-    background-image: url(../goober.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: contain;
-
-    margin: -30px;
-    margin-top: 0;
 }
 .mainQuadIV {
-    flex: 2;
+    flex: auto;
 
     display: flex;
     flex-direction: column;
@@ -244,8 +217,6 @@ directional classes */
     justify-content: center;
     
     font-family: Roboto;
-
-    margin-left: 40px;
 }
 
 /* socials */
@@ -255,16 +226,251 @@ directional classes */
     color: white;
 }
 
-.socialIcon {
-    font-size: 300%;
-
-    margin-left: 10px;
-    margin-right: 10px;
+.logoInfo {
+    float: left; width: 100%; margin: 0;
+}
+.ornamentInfo {
+    float: right; overflow: visible; margin: -30px 0px 0px 0px; width: 90%;
 }
 
 /* nav */
-/* top | right | bottom | left */
+/* margin: top | right | bottom | left */
 
-.navigation {
-    margin: 0 5% 3% auto;
+
+/*
+
+responsive design handling (mostly widths and heights)
+
+*/
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .contentSpace {
+        width: 100%;
+        height: 90%;
+    }
+    .linkButton {
+        padding: 10px;
+        margin: 5px auto 5px auto;
+        width: 90%;
+    }
+    .squareButton {
+        padding: 10px;
+        margin: 0 10px 0 10px; 
+    }
+    .socialIcon {
+        font-size: 300%;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    @media only screen and (max-width: 400px) {
+        .socialIcon {
+            font-size: 200%;
+            text-align: center;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    .social {
+        margin: 10px auto 10px auto;
+    }
+
+    .divider { margin: 10px 5px 10px 5px; }
+
+    .title { font-size: 200%; }
+    .genText { font-size: 20pt; }
+    @media only screen and (max-width: 400px) {
+        .title { font-size: 200%; }
+        .genText { font-size: 15pt; }
+    }
+
+    .mainQuadI { width: 80%; }
+    .mainQuadII { width: 35%; overflow: visible !important; }
+    .mainQuadIII { display: none;}
+    .mainQuadIV { width: 100%; }
+}
+
+/* small screens */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .contentSpace {
+        width: 70%;
+        height: 90%;
+    }
+    .linkButton {
+        padding: 15px;
+        margin: auto 10px auto 10px;
+        text-align: end;
+    }
+    .squareButton {
+        padding: 15px;
+        margin: 0 20px 0 20px; 
+    }
+    .socialIcon {
+        font-size: 300%;
+        text-align: right;
+        margin: auto 10px auto 10px;
+    }
+    .social {
+        margin: 10px 0 10px auto;
+        align-content: end;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        justify-content: flex-end;
+    }
+    .divider { margin: 20px 10px 20px 10px; }
+
+    .title { font-size: 300%; }
+    .genText { font-size: 20pt; }
+
+    .mainQuadI { width: 65%; }
+    .mainQuadII { width: 35%; }
+    .mainQuadIII { width: 20%; display: none; }
+    .mainQuadIV { width: 80%; }
+}
+
+/* desktop */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .contentSpace {
+        width: 70%;
+        height: 90%;
+    }
+    .linkButton {
+        padding: 15px;
+        margin: auto 10px auto 10px;
+        text-align: end;
+    }
+    .squareButton {
+        padding: 15px;
+        margin: 0 20px 0 20px; 
+    }
+    .socialIcon {
+        font-size: 300%;
+        text-align: right;
+        margin: auto 10px auto 10px;
+    }
+    .social {
+        margin: 10px 0 10px auto;
+        align-content: end;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        justify-content: flex-end;
+    }
+    .divider { margin: 20px 10px 20px 10px; }
+
+    .title { font-size: 300%; }
+    .genText { font-size: 20pt; }
+
+    .mainQuadI { width: 65%; }
+    .mainQuadII { width: 35%; }
+    .mainQuadIII { width: 20%; }
+    .mainQuadIV { width: 80%; }
+
+    .goober {
+        float: left; overflow: visible; margin: 0px 0px 0px -30px; width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+    .contentSpace {
+        width: 60%;
+        height: 80%;
+    }
+    .linkButton {
+        padding: 15px;
+        margin: auto 10px auto 10px;
+        text-align: end;
+    }
+    .squareButton {
+        padding: 15px;
+        margin: 0 20px 0 20px; 
+    }
+    .socialIcon {
+        font-size: 300%;
+        text-align: right;
+        margin: auto 10px auto 10px;
+    }
+    .social {
+        margin: 10px 0 10px auto;
+        align-content: end;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        justify-content: flex-end;
+    }
+    .divider { margin: 10px 5px 10px 5px; }
+
+    .title { font-size: 300%; }
+    .genText { font-size: 20pt; }
+
+    .mainQuadI { width: 65%; }
+    .mainQuadII { width: 35%; }
+    .mainQuadIII { width: 20%; }
+    .mainQuadIV { width: 80%; }
+
+    .goober {float: left; overflow: visible; margin: 0px 0px -10px -50px; width: 80%;}
+    .ornamentInfo {float: right; overflow: visible; margin: -30px 0px 0px 0px; width: 70%;}
+    .logoInfo {float: left; width: 80%; margin: 0;}
+}
+
+@media only screen and (min-width: 1600px) {
+    .contentSpace {
+        width: 40%;
+        height: 70%;
+    }
+    .linkButton {
+        padding: 15px;
+        margin: auto 10px auto 10px;
+        text-align: end;
+    }
+    .squareButton {
+        padding: 15px;
+        margin: 0 20px 0 20px; 
+    }
+    .socialIcon {
+        font-size: 300%;
+        text-align: right;
+        margin: auto 10px auto 10px;
+    }
+    .social {
+        margin: 10px 0 10px auto;
+        align-content: end;
+    }
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        justify-content: flex-end;
+    }
+    .divider { margin: 20px 10px 20px 10px; }
+
+    .title { font-size: 200%; }
+    .genText { font-size: 20pt; }
+    @media only screen and (min-width: 1920px) {
+        .title { font-size: 300%; }
+        .genText { font-size: 20pt; }
+    }
+
+    .mainQuadI { width: 65%; }
+    .mainQuadII { width: 35%; }
+    .mainQuadIII { width: 30%; }
+    .mainQuadIV { width: 70%; align-content: flex-end; justify-content: flex-end; margin-bottom: 20px;}
+
+    .goober {float: left; overflow: visible; margin: 0px 0px -10px -50px; width: 80%;}
+    .ornamentInfo {float: right; overflow: visible; margin: -30px 0px 0px 0px; width: 70%;}
+    .logoInfo {float: left; width: 80%; margin: 0;}
 }
