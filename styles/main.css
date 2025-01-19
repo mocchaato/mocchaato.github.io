@@ -386,7 +386,7 @@ responsive design handling (mostly widths and heights)
 @media only screen and (min-width: 1366px) and (max-width: 1600px) {
     .contentSpace {
         width: 60%;
-        height: 80%;
+        height: 90%;
     }
     .linkButton {
         padding: 15px;
