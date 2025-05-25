@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
     <title>:3</title>
-    <!--
-    Favicon and internal references
-    -->
-    <link rel="icon" href="favicon.ico">
-    <link href="./styles/main.css" rel="stylesheet">
-    <script src="./scripts/mainbehavior.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--
-    Web service connections (external fonts)
-    -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9e60d999d5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
 </head>
-<body>
-    <main class="mainPage">
-        <div class="contentSpace">
-            <div class="mainTop">
-                <div class="mainQuadI">
-                    <img src="./logo.png" class="logoInfo">
-                </div>
-                <div class="mainQuadII">
-                    <img src="./websiteornament.png" class="ornamentInfo">
-                </div>
-            </div>
-            <div class="mainArea">
-                <div class="divider"></div>
-                <h1 class="title">artista, programador, viciado em café</h1>
-                <p class="genText">sou macchi, um artista furry médio por aí, na luta para ser um estudante de medicina.
-                    desenho apenas como hobby, não pretendo trabalhar com isso (no momento), logo não se sinta pressionado a me comissionar :3
-                    estou oferecendo meus serviços apenas como meio de aumentar minha variedade de desenhos, buscando a satisfação dos clientes no processo.</p>
-            </div>
-            <div class="mainBot">
-                <div class="mainQuadIII">
-                    <img src="./goober.png" class="goober">
-                </div>
-                <div class="mainQuadIV">
-                    <div class="social">
-                        <a class="socialIcon fas fa-solid fa-brands fa-twitter"  target="_blank" href="https://twitter.com/macchiespresso"></a>
-                        <a class="socialIcon fas fa-solid fa-brands fa-instagram"  target="_blank" href="https://instagram.com/macchiapresso"></a>
-                        <a class="socialIcon fas fa-solid fa-brands fa-youtube"  target="_blank" href="https://youtube.com/@macchiapresso"></a>
-                        <a class="socialIcon fas fa-solid fa-brands fa-github finalButton"  target="_blank" href="https://github.com/macchiapresso"></a>
-                    </div>
-                    <div class="navigation">
-                        <a class="linkButton"><i class="fas fa-camera"></i> | Portfolio</a>
-                        <a class="linkButton"><i class="fas fa-shopping-cart"></i> | Comissões</a>
-                        <a class="linkButton finalButton" href="./international/"><i class="fas fa-language"></i> | EN</a>
-                    </div>
-            </div>
-        </div>
-    </main>
-    <footer class="spBotBar">
-        <div class="botBar">
 
+<body>
+    <div id="screen">
+        <div id="popup">
+            <div id="titlebar">
+                <div class="title">
+                    <p>Sobre mim | Macchiapresso</p>
+                </div>
+                <div class="buttons">
+                    <div class="titleicon hide">
+                        <p><i class="fa-regular fa-window-minimize"></i></p>
+                    </div>                    
+                    <div class="titleicon resize">
+                        <p><i class="fa-regular fa-window-maximize"></i></p>
+                    </div>
+                    <div class="titleicon close">
+                        <p><i class="fa-solid fa-xmark"></i></p>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div id="windowbody">
+
+            </div>
+            <div id="social">
+                <a class="socialIcon fas fa-solid fa-brands fa-twitter"  target="_blank" href="https://twitter.com/macchiapresso"></a>
+                <a class="socialIcon fas fa-solid fa-brands fa-instagram"  target="_blank" href="https://instagram.com/macchiapresso"></a>
+                <a class="socialIcon fas fa-solid fa-brands fa-youtube"  target="_blank" href="https://youtube.com/@macchiapresso"></a>
+                <a class="socialIcon fas fa-solid fa-brands fa-github finalButton"  target="_blank" href="https://github.com/macchiapresso"></a>
+            </div>
         </div>
-    </footer>
+    </div>
 </body>
+    <script>
+        // Make the DIV element draggable:
+dragElement(document.getElementById("popup"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById("titlebar")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById("titlebar").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+    </script>
 </html>

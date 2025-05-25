@@ -1,22 +1,7 @@
-/*
-
-generic terms, override by specifying class 
-
-*/
-* {
-    background-color: transparent;
-    box-sizing: border-box;
-}
-
 body {
-    background-image: url(../pattern.png);
-
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    background-color: #282828;
+    size: full;
+    overflow: hidden;
 }
 
 a {
@@ -32,446 +17,104 @@ a {
 }
 
 a:link {
-    color: white;
+    color: #fbf1c7;
 }
 
 a:visited {
-    color: white;
+    color: #fbf1c7;
 }
 
 a:hover {
-    color: #916f4e;
-}
-/*
-
-external font handling
-
-*/
-
-.jersey-15-regular {
-    font-family: "Jersey 15", serif;
-    font-weight: 400;
-    font-style: normal;
+    color: #fe8019;
 }
 
-/*
+#popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #3c3836;
+    border: #fbf1c7 solid 2px;
 
-scrollbar handling
-
-*/
-
-/* width */
-::-webkit-scrollbar {
-    width: 5px;
-}
-  
-/* Track */
-::-webkit-scrollbar-track {
-    background-color: #757365;
-    border-radius: 5px;
-
-}
-   
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #f0ebc6; 
-    border: #ffffff00 solid 2px;
-    border-radius: 5px;
-}
-  
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #523732; 
-}
-
-/*
-
-START OF CLASS STYLING
-
-*/
-/* 
-general classes */
-
-.mainPage {
-    align-content: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-.contentSpace {
-    margin: auto;
-    
+    min-width: 550px;
+    min-height: 700px;
+    width: 550px;
+    height: 700px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-
-    background-color: #00000050;
-    
-    border: 2px dashed white;
-    border-radius: 20px;
-
-    backdrop-filter: blur(18px);
 }
 
-/* button handling */
-
-.linkButton {
-    background-color: white;
-    border-radius: 10px;
-
-    font-weight: bold;
-}
-
-.squareButton {
-    background-color: white;
-    border-radius: 10px;
-}
-
-.linkButton:link {
-    color: black;
-}
-
-.linkButton:visited {
-    color: black;
-}
-
-.linkButton:hover {
-    color: white;
-    background-color: #916f4e;
-}
-
-/* divider */
-
-.divider {
-    background-color: white;
-    border: white solid 1px;
-    border-radius: 2px;
-}
-
-/* text handling */
-
-.title {
-    font-family: "Jersey 15";
-    color: white;
-    text-align: left;
-    font-weight: lighter;
-    margin: 10px;
-}
-
-.genText {
-    font-family: "Jersey 15";
-    font-weight: lighter;
-    color: white;
-    text-align: left;
-    margin: 10px;
-    
-}
-
-/* 
-directional classes */
-
-/* "main" main areas */
-
-.mainTop {
-    flex: 1;
-
+#titlebar {
+    border-bottom: #fbf1c7 2px solid;
+    height: 5%;
     display: flex;
     flex-direction: row;
+    cursor: move;
 }
-.mainArea {
+
+#windowbody {
     flex: 2;
 }
-.mainBot {
-    flex: 1;
 
+#social {
+    flex: 0.3;
+    border-top: #fbf1c7 2px solid;
+    font-size: 3vw;
+    text-align: center;
+    display: flex;
+}
+
+.socialIcon {
+    margin: auto;
+}
+
+.title {
+    flex: 1.5;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    font-family: Space Mono;
+}
+.title p {
+    margin: auto;
+    align-self: center;
+    color: #fbf1c7;
+}
+
+.buttons {
+    flex: 0.2;
     display: flex;
     flex-direction: row;
-}
-
-/* mainTop subdivisions */
-
-.mainQuadI {
-    flex: auto;
-    align-content: center;
-    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
     margin: 0;
-}
-.mainQuadII {
-    flex: auto;
-    overflow: visible !important;
-}
-
-/* mainBot subdivisions */
-
-.mainQuadIII {
-    flex: auto;
-    display: flex;
-}
-.mainQuadIV {
-    flex: auto;
-
-    display: flex;
-    flex-direction: column;
     align-content: center;
     justify-content: center;
-    
-    font-family: Roboto;
+    height: 100%;
 }
 
-/* socials */
-
-.social {
-    margin: 0 5% 10% auto;
-    color: white;
+.buttons p {
+    margin: auto;
+    border: #fbf1c7 solid 2px;
+    border-radius: 7px;
+    width: 20px;
+    height: 20px;
+    font-size: 2em;
+    color: #fbf1c7;
+    vertical-align: middle;
+    text-align: center;
 }
 
-.logoInfo {
-    float: left; width: 100%; margin: 0;
-}
-.ornamentInfo {
-    float: right; overflow: visible; margin: -30px 0px 0px 0px; width: 90%;
-}
-
-/* nav */
-/* margin: top | right | bottom | left */
-
-
-/*
-
-responsive design handling (mostly widths and heights)
-
-*/
-
-/* mobile */
-@media only screen and (max-width: 768px) {
-    .contentSpace {
-        width: 100%;
-        height: 90%;
-    }
-    .linkButton {
-        padding: 10px;
-        margin: 5px auto 5px auto;
-        width: 90%;
-    }
-    .squareButton {
-        padding: 10px;
-        margin: 0 10px 0 10px; 
-    }
-    .socialIcon {
-        font-size: 300%;
-        text-align: center;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    @media only screen and (max-width: 400px) {
-        .socialIcon {
-            font-size: 200%;
-            text-align: center;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-    }
-    .navigation {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-    }
-    .social {
-        margin: 10px auto 10px auto;
-    }
-
-    .divider { margin: 10px 5px 10px 5px; }
-
-    .title { font-size: 200%; }
-    .genText { font-size: 20pt; }
-    @media only screen and (max-width: 400px) {
-        .title { font-size: 200%; }
-        .genText { font-size: 15pt; }
-    }
-
-    .mainQuadI { width: 80%; }
-    .mainQuadII { width: 35%; overflow: visible !important; }
-    .mainQuadIII { display: none;}
-    .mainQuadIV { width: 100%; }
+.titleicon {
+    font-size: 0.5em;
+    text-align: center;
+    margin: auto 10px auto 10px;
+    cursor: pointer;
 }
 
-/* small screens */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .contentSpace {
-        width: 70%;
-        height: 90%;
-    }
-    .linkButton {
-        padding: 15px;
-        margin: auto 10px auto 10px;
-        text-align: end;
-    }
-    .squareButton {
-        padding: 15px;
-        margin: 0 20px 0 20px; 
-    }
-    .socialIcon {
-        font-size: 300%;
-        text-align: right;
-        margin: auto 10px auto 10px;
-    }
-    .social {
-        margin: 10px 0 10px auto;
-        align-content: end;
-    }
-    .navigation {
-        display: flex;
-        flex-direction: row;
-        align-content: flex-end;
-        justify-content: flex-end;
-    }
-    .divider { margin: 20px 10px 20px 10px; }
-
-    .title { font-size: 300%; }
-    .genText { font-size: 20pt; }
-
-    .mainQuadI { width: 65%; }
-    .mainQuadII { width: 35%; }
-    .mainQuadIII { width: 20%; display: none; }
-    .mainQuadIV { width: 80%; }
-}
-
-/* desktop */
-@media only screen and (min-width: 1024px) and (max-width: 1366px) {
-    .contentSpace {
-        width: 70%;
-        height: 90%;
-    }
-    .linkButton {
-        padding: 15px;
-        margin: auto 10px auto 10px;
-        text-align: end;
-    }
-    .squareButton {
-        padding: 15px;
-        margin: 0 20px 0 20px; 
-    }
-    .socialIcon {
-        font-size: 300%;
-        text-align: right;
-        margin: auto 10px auto 10px;
-    }
-    .social {
-        margin: 10px 0 10px auto;
-        align-content: end;
-    }
-    .navigation {
-        display: flex;
-        flex-direction: row;
-        align-content: flex-end;
-        justify-content: flex-end;
-    }
-    .divider { margin: 20px 10px 20px 10px; }
-
-    .title { font-size: 300%; }
-    .genText { font-size: 20pt; }
-
-    .mainQuadI { width: 65%; }
-    .mainQuadII { width: 35%; }
-    .mainQuadIII { width: 20%; }
-    .mainQuadIV { width: 80%; }
-
-    .goober {
-        float: left; overflow: visible; margin: 0px 0px 0px -30px; width: 80%;
-    }
-}
-
-@media only screen and (min-width: 1366px) and (max-width: 1600px) {
-    .contentSpace {
-        width: 60%;
-        height: 90%;
-    }
-    .linkButton {
-        padding: 15px;
-        margin: auto 10px auto 10px;
-        text-align: end;
-    }
-    .squareButton {
-        padding: 15px;
-        margin: 0 20px 0 20px; 
-    }
-    .socialIcon {
-        font-size: 300%;
-        text-align: right;
-        margin: auto 10px auto 10px;
-    }
-    .social {
-        margin: 10px 0 10px auto;
-        align-content: end;
-    }
-    .navigation {
-        display: flex;
-        flex-direction: row;
-        align-content: flex-end;
-        justify-content: flex-end;
-    }
-    .divider { margin: 10px 5px 10px 5px; }
-
-    .title { font-size: 300%; }
-    .genText { font-size: 20pt; }
-
-    .mainQuadI { width: 65%; }
-    .mainQuadII { width: 35%; }
-    .mainQuadIII { width: 20%; }
-    .mainQuadIV { width: 80%; }
-
-    .goober {float: left; overflow: visible; margin: 0px 0px -10px -50px; width: 80%;}
-    .ornamentInfo {float: right; overflow: visible; margin: -30px 0px 0px 0px; width: 70%;}
-    .logoInfo {float: left; width: 80%; margin: 0;}
-}
-
-@media only screen and (min-width: 1600px) {
-    .contentSpace {
-        width: 40%;
-        height: 70%;
-    }
-    .linkButton {
-        padding: 15px;
-        margin: auto 10px auto 10px;
-        text-align: end;
-    }
-    .squareButton {
-        padding: 15px;
-        margin: 0 20px 0 20px; 
-    }
-    .socialIcon {
-        font-size: 300%;
-        text-align: right;
-        margin: auto 10px auto 10px;
-    }
-    .social {
-        margin: 10px 0 10px auto;
-        align-content: end;
-    }
-    .navigation {
-        display: flex;
-        flex-direction: row;
-        align-content: flex-end;
-        justify-content: flex-end;
-    }
-    .divider { margin: 20px 10px 20px 10px; }
-
-    .title { font-size: 200%; }
-    .genText { font-size: 20pt; }
-    @media only screen and (min-width: 1920px) {
-        .title { font-size: 300%; }
-        .genText { font-size: 20pt; }
-    }
-
-    .mainQuadI { width: 65%; }
-    .mainQuadII { width: 35%; }
-    .mainQuadIII { width: 30%; }
-    .mainQuadIV { width: 70%; align-content: flex-end; justify-content: flex-end; margin-bottom: 20px;}
-
-    .goober {float: left; overflow: visible; margin: 0px 0px -10px -50px; width: 80%;}
-    .ornamentInfo {float: right; overflow: visible; margin: -30px 0px 0px 0px; width: 70%;}
-    .logoInfo {float: left; width: 80%; margin: 0;}
+.close p {
+    background-color: #cc241b;
 }
