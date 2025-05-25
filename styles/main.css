@@ -1,7 +1,10 @@
+
 body {
     background-color: #282828;
     size: full;
     overflow: hidden;
+    margin: 0;
+
 }
 
 a {
@@ -25,10 +28,54 @@ a:visited {
 }
 
 a:hover {
-    color: #fe8019;
+    color: #665c54;
 }
 
-#popup {
+#screen {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.taskbar {
+    border-top: #fbf1c7 2px solid;
+    border-bottom: #fbf1c7 2px solid;
+    position: fixed;
+    width: 100%;
+    height: 48px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.startmenu {
+    width: 48px;
+    border-right: #fbf1c7 solid 2px;
+    border-left: #fbf1c7 solid 2px;
+}
+
+.iconbar {
+    flex: 2;
+    border-right: #fbf1c7 solid 2px;
+}
+
+.clock {
+    flex: 0.1;
+    border-right: #fbf1c7 solid 2px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    color: #fbf1c7;
+}
+
+.clock p {
+    margin: auto;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.popup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,17 +83,19 @@ a:hover {
     transform: translate(-50%, -50%);
     background-color: #3c3836;
     border: #fbf1c7 solid 2px;
+    border-radius: 10px;
+}
 
+.aboutme {
     min-width: 550px;
     min-height: 700px;
     width: 550px;
     height: 700px;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
 
-#titlebar {
+.titlebar {
     border-bottom: #fbf1c7 2px solid;
     height: 5%;
     display: flex;
@@ -54,14 +103,42 @@ a:hover {
     cursor: move;
 }
 
-#windowbody {
+.windowbody {
     flex: 2;
+    font-family: Space Mono;
+    color: #fbf1c7;
+    margin: 0;
 }
 
-#social {
+.texto {
+    padding: 0 30px 0 30px;
+    margin: 0;
+    display: block;
+}
+
+.texto h1 {
+    margin: 0;
+}
+.texto p {
+    margin: auto;
+    margin-bottom: 2px;
+}
+
+.pfp {
+    padding: 30px;
+    padding-bottom: 10px;
+}
+
+.pfpimg {
+    width: 200px;
+    border: #fbf1c7 solid 5px;
+    border-radius: 10px;
+}
+
+.social {
     flex: 0.3;
     border-top: #fbf1c7 2px solid;
-    font-size: 3vw;
+    font-size: 56px;
     text-align: center;
     display: flex;
 }
@@ -117,4 +194,38 @@ a:hover {
 
 .close p {
     background-color: #cc241b;
+}
+.close p:hover {
+    background-color: #fb4934;
+}
+.close p:active {
+    background-color: #928374;
+}
+
+.langtoggle {
+    background-color: #fbf1c7;
+    border: #fbf1c7 2px solid;
+    border-radius: 5px;
+    font-family: Space Mono;
+    font-size: 12pt;
+    margin: auto;
+    margin-top: 15px;
+    width: auto;
+
+    -o-transition:.25s;
+    -ms-transition:.25s;
+    -moz-transition:.25s;
+    -webkit-transition:.25s;
+    transition:.25s;
+}
+
+.langtoggle:hover {
+    background-color: #665c54;
+    border-color: #665c54;
+    color: #fbf1c7;
+}
+.langtoggle:active {
+    background-color: #504945;
+    border-color: #504945;
+    color: #fbf1c7;
 }

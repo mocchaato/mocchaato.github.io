@@ -11,22 +11,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/9e60d999d5.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="screen">
-        <div id="popup">
-            <div id="titlebar">
+    <div class="screen">
+        <div class="popup aboutme" id="draggable">
+            <div class="titlebar" id="dragbar">
                 <div class="title">
                     <p>Sobre mim | Macchiapresso</p>
                 </div>
                 <div class="buttons">
                     <div class="titleicon hide">
                         <p><i class="fa-regular fa-window-minimize"></i></p>
-                    </div>                    
+                    </div>
                     <div class="titleicon resize">
                         <p><i class="fa-regular fa-window-maximize"></i></p>
                     </div>
@@ -38,61 +39,90 @@
                 </div>
 
             </div>
-            <div id="windowbody">
+            <div class="windowbody">
+                <div class="pfp">
+                    <img src="./pfp.jpg" class="pfpimg">
+                </div>
+                <div class="texto">
+                    <h1>Bom Dia</h1>
+                    <p>Sou Macchi, um artista e estudante, viciado em café</p>
+                    <p>Medicina (Pré-vestibular)</p>
+                    <p>Também interessado no mundo da culinária, linux e webdev</p>
+                    <p>Você encontrará minhas redes sociais abaixo</p>
+                    <p>Caso esteja interessado em comissões, feche esta janela (o x vermelho aqui)</p>
+                    <div style="display: flex;">
+                        <button class="langtoggle">Non-brazillian speaker? No problem! Click here</button>
+                    </div>
+                </div>
+            </div>
+            <div class="social">
+                <a class="socialIcon fas fa-solid fa-brands fa-twitter" target="_blank"
+                    href="https://twitter.com/macchiapresso"></a>
+                <a class="socialIcon fas fa-solid fa-brands fa-instagram" target="_blank"
+                    href="https://instagram.com/macchiapresso"></a>
+                <a class="socialIcon fas fa-solid fa-brands fa-youtube" target="_blank"
+                    href="https://youtube.com/@macchiapresso"></a>
+                <a class="socialIcon fas fa-solid fa-brands fa-github finalButton" target="_blank"
+                    href="https://github.com/macchiapresso"></a>
+            </div>
+        </div>
+        <div class="taskbar">
+            <div class="startmenu">
 
             </div>
-            <div id="social">
-                <a class="socialIcon fas fa-solid fa-brands fa-twitter"  target="_blank" href="https://twitter.com/macchiapresso"></a>
-                <a class="socialIcon fas fa-solid fa-brands fa-instagram"  target="_blank" href="https://instagram.com/macchiapresso"></a>
-                <a class="socialIcon fas fa-solid fa-brands fa-youtube"  target="_blank" href="https://youtube.com/@macchiapresso"></a>
-                <a class="socialIcon fas fa-solid fa-brands fa-github finalButton"  target="_blank" href="https://github.com/macchiapresso"></a>
+            <div class="iconbar">
+
+            </div>
+            <div class="clock">
+                <p>13:37</p>
             </div>
         </div>
     </div>
 </body>
-    <script>
-        // Make the DIV element draggable:
-dragElement(document.getElementById("popup"));
+<script>
+    // Make the DIV element draggable:
+    dragElement(document.getElementById("draggable"));
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById("titlebar")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById("titlebar").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("dragbar")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById("dragbar").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
 
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
 
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-    </script>
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+</script>
+
 </html>
