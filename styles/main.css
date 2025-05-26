@@ -37,26 +37,205 @@ a:hover {
     flex-direction: column;
 }
 
+#desktop {
+    display: grid;
+    grid-template-rows: repeat(14, 1fr);
+    font-family: Space Mono;
+    color: #fbf1c7;
+}
+
+#deskicon {
+    border: transparent 2px dotted;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#deskicon:hover {
+    border: #fbf1c7 2px dotted;
+}
+
+#deskicon:active {
+    border: #fbf1c7 2px solid;
+}
+
+#deskicone {
+    align-self: center;
+}
+
+#label {
+    margin: 0;
+    height: 20px;
+    text-align: center;
+    overflow-wrap: normal;
+}
+
+.separator {
+    background-color: #fbf1c7;
+    height: 10px;
+    padding: 2px;
+    margin: 20px;
+}
+
+.sellspace {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgprev {
+    flex: 1;
+}
+.oferta {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.previewimg {
+    border-radius: 10px;
+    border: solid #fbf1c7 3px;
+}
+
+.oferta h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.desc {
+    font-size: 20px;
+    margin: 0;
+}
+.selldesc {
+    flex: 1;
+    font-size: 24px;
+    margin: auto 20px auto 20px;
+    text-align: left;
+    color: #fbf1c7;
+}
+
+.commmenu {
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    font-family: Space Mono;
+}
+
+.linkbtn {
+    font-size: 24px;
+    background-color: #282828;
+    border: #fbf1c7 solid 2px;
+    color: #3c3836;
+    font-weight: bold;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.showcase {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.showcase img {
+    width: 50px;
+    margin: 20px 10px 10px 10px;
+}
+
 .taskbar {
     border-top: #fbf1c7 2px solid;
     border-bottom: #fbf1c7 2px solid;
+    background-color: #3c3836;
     position: fixed;
     width: 100%;
     height: 48px;
     left: 0;
     bottom: 0;
     display: flex;
+    z-index: -1;
+}
+
+.imagemicone {
+    width: 72px;
+    margin: 0;
+}
+
+.deskicone {
+    margin: 0;
+}
+
+.aboutme {
+    min-width: 550px;
+    min-height: 700px;
+    width: 550px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comms {
+    display: none;
+    flex-direction: column;
+    width: 1200px;
+    height: 800px;
+}
+
+.portfolio {
+    display: none;
+    flex-direction: column;
+    width: 1200px;
+    height: 800px;
+}
+
+.portfoliob {
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .startmenu {
     width: 48px;
     border-right: #fbf1c7 solid 2px;
     border-left: #fbf1c7 solid 2px;
+    display: flex;
+}
+
+.portimage {
+    max-width: 1200px;
+    max-height: 400px;
+    margin: 20px auto 20px auto;
+    border-radius: 10px;
+    border: #fbf1c7 solid 4px;
+}
+
+.startbtn {
+    color: #fbf1c7;
+    font-size: 24px;
+    margin: auto;
 }
 
 .iconbar {
     flex: 2;
     border-right: #fbf1c7 solid 2px;
+}
+
+.folio {
+    padding: 50px;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+}
+
+.previewimg {
+    width: 300px;
+    height: fit-content;
 }
 
 .clock {
@@ -68,11 +247,19 @@ a:hover {
     color: #fbf1c7;
 }
 
-.clock p {
+#time {
     margin: auto;
     font-family: Roboto;
     font-weight: bold;
     font-size: 18px;
+}
+
+.commmenu {
+    flex: 0.25;
+    border-top: #fbf1c7 2px solid;
+    font-size: 56px;
+    text-align: center;
+    display: flex;
 }
 
 .popup {
@@ -84,15 +271,6 @@ a:hover {
     background-color: #3c3836;
     border: #fbf1c7 solid 2px;
     border-radius: 10px;
-}
-
-.aboutme {
-    min-width: 550px;
-    min-height: 700px;
-    width: 550px;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
 }
 
 .titlebar {

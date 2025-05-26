@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
-    <title>:3</title>
+    <title>| Macchiapresso</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +17,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="startTime()">
     <div class="screen">
-        <div class="popup aboutme" id="draggable">
-            <div class="titlebar" id="dragbar">
+        <div id="desktop">
+            <div class="sobremimd" id="deskicon" onclick="myFunction('iconabtme')">
+                <div id="deskicone">
+                    <img src="./media/macchitenhamedoemote.png" class="imagemicone">
+                </div>
+                <div id="label">
+                    Sobre Mim
+                </div>
+            </div>
+            <div class="commsd" id="deskicon" onclick="myFunction('iconcomms')">
+                <div id="deskicone">
+                    <img src="./media/macchiheartemote.png" class="imagemicone">
+                </div>
+                <div id="label">
+                    Comissões
+                </div>
+            </div>
+            <div class="foliod" id="deskicon" onclick="myFunction('iconfolio')">
+                <div id="deskicone">
+                    <img src="./media/macchiwowemote.png" class="imagemicone">
+                </div>
+                <div id="label">
+                    Portfolio
+                </div>
+            </div>
+            <div class="extrasd" id="deskicon" onclick="myFunction('iconextra')">
+                <div id="deskicone">
+                    <img src="./media/macchipeekemote.png" class="imagemicone">
+                </div>
+                <div id="label">
+                    Extra
+                </div>
+            </div>
+        </div>
+        <div class="popup aboutme" id="draggableabtme">
+            <div class="titlebar" id="dragbarabtme">
                 <div class="title">
                     <p>Sobre mim | Macchiapresso</p>
                 </div>
@@ -32,16 +66,14 @@
                         <p><i class="fa-regular fa-window-maximize"></i></p>
                     </div>
                     <div class="titleicon close">
-                        <p><i class="fa-solid fa-xmark"></i></p>
+                        <p onclick="myFunction('aboutme')"><i class="fa-solid fa-xmark"></i></p>
                     </div>
-
-
                 </div>
 
             </div>
             <div class="windowbody">
                 <div class="pfp">
-                    <img src="./pfp.jpg" class="pfpimg">
+                    <img src="./media/pfp.jpg" class="pfpimg">
                 </div>
                 <div class="texto">
                     <h1>Bom Dia</h1>
@@ -49,7 +81,7 @@
                     <p>Medicina (Pré-vestibular)</p>
                     <p>Também interessado no mundo da culinária, linux e webdev</p>
                     <p>Você encontrará minhas redes sociais abaixo</p>
-                    <p>Caso esteja interessado em comissões, feche esta janela (o x vermelho aqui)</p>
+                    <p>Caso esteja interessado em comissões, abra a janela de comissões</p>
                     <div style="display: flex;">
                         <button class="langtoggle">Non-brazillian speaker? No problem! Click here</button>
                     </div>
@@ -66,28 +98,139 @@
                     href="https://github.com/macchiapresso"></a>
             </div>
         </div>
-        <div class="taskbar">
-            <div class="startmenu">
+        <div class="popup comms" id="draggablecomms">
+            <div class="titlebar" id="dragbarcomms">
+                <div class="title">
+                    <p>Minhas Comissões :3 | Macchiapresso</p>
+                </div>
+                <div class="buttons">
+                    <div class="titleicon hide">
+                        <p><i class="fa-regular fa-window-minimize"></i></p>
+                    </div>
+                    <div class="titleicon resize">
+                        <p><i class="fa-regular fa-window-maximize"></i></p>
+                    </div>
+                    <div class="titleicon close">
+                        <p onclick="myFunction('comms')"><i class="fa-solid fa-xmark"></i></p>
+                    </div>
+                </div>
 
             </div>
-            <div class="iconbar">
-
+            <div class="windowbody folio">
+                <div class="sellspace icones">
+                    <div class="imgprev">
+                        <img src="./media/iconsample.png" class="previewimg">
+                    </div>
+                    <div class="oferta">
+                        <h1>Icon</h1>
+                        <p class="desc">flat: R$25,00</p>
+                        <p class="desc">render: R$35,00</p>
+                        <div class="separator"
+                            style="padding: 0 !important; height: 2px; width: 50%; margin: 40px auto 40px auto;"></div>
+                        <p class="desc">emoji: R$5,00 por emoji</p>
+                        <p class="desc">obs: R$40,00 por 10 emojis</p>
+                        <p class="desc showcase"><img src="./media/macchiheartemote.png"><img src="./media/macchipeekemote.png"><img
+                                src="./media/macchishyemote.png"><img src="./media/macchitenhamedoemote.png"><img
+                                src="./media/macchiwowemote.png"></p>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="sellspace icones">
+                    <div class="imgprev">
+                        <img src="./media/halfbodysample.png" class="previewimg">
+                    </div>
+                    <div class="oferta">
+                        <h1>Halfbody</h1>
+                        <p class="desc">sketch: R$40,00</p>
+                        <p class="desc">flat: R$55,00</p>
+                        <p class="desc">render: R$70,00</p>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="sellspace icones">
+                    <div class="imgprev">
+                        <img src="./media/fullbodysample.png" class="previewimg">
+                    </div>
+                    <div class="oferta">
+                        <h1>Fullbody</h1>
+                        <p class="desc">sketch: R$55,00</p>
+                        <p class="desc">flat: R$70,00</p>
+                        <p class="desc">render: R$85,00</p>
+                        <div class="separator"
+                            style="padding: 0 !important; height: 2px; width: 50%; margin: 40px auto 40px auto;"></div>
+                        <p class="desc">segundo personagem: +R$30,00</p>
+                        <p class="desc">terceiro personagem e adiante: +R$40,00</p>
+                        <div class="separator"
+                            style="padding: 0 !important; height: 2px; width: 50%; margin: 40px auto 40px auto;"></div>
+                        <h2>cenário</h2>
+                        <p class="desc">cenário detalhado: preço do fullbody +R$50,00</p>
+                        <p class="desc">cenário completo (estilo página de comic): R$200,00</p>
+                    </div>
+                </div>
             </div>
-            <div class="clock">
-                <p>13:37</p>
+            <div class="commmenu">
+                <p class="selldesc">Você será atualizado regularmente nas DMs do twitter.</p>
+                <a class="linkbtn" href="https://twitter.com/messages/compose?recipient_id=1868828304855203840"
+                    class="twitter-dm-button" data-screen-name="@macchiapresso" target="_blank"><i
+                        class="fas fa-shopping-cart"></i> | Entre em contato</a>
             </div>
         </div>
+        <div class="popup portfolio" id="draggablesocial">
+            <div class="titlebar" id="dragbarsocial">
+                <div class="title">
+                    <p>Meus desenhos | Macchiapresso</p>
+                </div>
+                <div class="buttons">
+                    <div class="titleicon hide">
+                        <p><i class="fa-regular fa-window-minimize"></i></p>
+                    </div>
+                    <div class="titleicon resize">
+                        <p><i class="fa-regular fa-window-maximize"></i></p>
+                    </div>
+                    <div class="titleicon close">
+                        <p onclick="myFunction('folio')"><i class="fa-solid fa-xmark"></i></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="windowbody portfoliob">
+                <img class="portimage" src="./media/portfolio/aguaviva.png">
+                <img class="portimage" src="./media/portfolio/blazenewrefcolor.png">
+                <img class="portimage" src="./media/portfolio/casual.png">
+                <img class="portimage" src="./media/portfolio/commsiaba.png">
+                <img class="portimage" src="./media/portfolio/cysulsorteio.png">
+                <img class="portimage" src="./media/portfolio/luzesombra.png">
+                <img class="portimage" src="./media/portfolio/macchicon2025.png">
+                <img class="portimage" src="./media/portfolio/poseforeshort.png">
+                <img class="portimage" src="./media/portfolio/vortex_color.png">
+            </div>
+        </div>
+    </div>
+    <div class="taskbar">
+        <div class="startmenu">
+            <div class="startbtn"><i class="fa-solid fa-carrot"></i></div>
+        </div>
+        <div class="iconbar">
+
+        </div>
+        <div class="clock">
+            <div id="time"></div>
+        </div>
+    </div>
     </div>
 </body>
 <script>
     // Make the DIV element draggable:
-    dragElement(document.getElementById("draggable"));
+    dragAbtme(document.getElementById("draggableabtme"));
+    dragComms(document.getElementById("draggablecomms"));
+    dragSocial(document.getElementById("draggablesocial"));
+    dragExtra(document.getElementById("draggableextra"));
 
-    function dragElement(elmnt) {
+    function dragAbtme(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        if (document.getElementById("dragbar")) {
+        if (document.getElementById("dragbarabtme")) {
             // if present, the header is where you move the DIV from:
-            document.getElementById("dragbar").onmousedown = dragMouseDown;
+            document.getElementById("dragbarabtme").onmousedown = dragMouseDown;
         } else {
             // otherwise, move the DIV from anywhere inside the DIV:
             elmnt.onmousedown = dragMouseDown;
@@ -122,6 +265,172 @@
             document.onmouseup = null;
             document.onmousemove = null;
         }
+    }
+    function dragComms(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("dragbarcomms")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById("dragbarcomms").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    function dragSocial(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("dragbarsocial")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById("dragbarsocial").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    function dragExtra(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById("dragbarextra")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById("dragbarextra").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    function myFunction(type) {
+
+        if (type == "aboutme") {
+            var x = document.querySelector(".aboutme")
+            x.style.display = "none"
+        } else if (type == "iconabtme") {
+            var x = document.querySelector(".aboutme")
+            x.style.display = "flex"
+        }
+        if (type == "comms") {
+            var x = document.querySelector(".comms")
+            x.style.display = "none"
+        } else if (type == "iconcomms") {
+            var x = document.querySelector(".comms")
+            x.style.display = "flex"
+        }
+        if (type == "folio") {
+            var x = document.querySelector(".portfolio")
+            x.style.display = "none"
+        } else if (type == "iconfolio") {
+            var x = document.querySelector(".portfolio")
+            x.style.display = "flex"
+        }
+        if (type == "extras") {
+            var x = document.querySelector(".extras")
+            x.style.display = "none"
+        } else if (type == "iconabtme") {
+            var x = document.querySelector(".extras")
+            x.style.display = "flex"
+        }
+    }
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+        return i;
     }
 </script>
 
