@@ -7,6 +7,14 @@ body {
 
 }
 
+button {
+    -o-transition:.25s;
+    -ms-transition:.25s;
+    -moz-transition:.25s;
+    -webkit-transition:.25s;
+    transition:.25s;
+}
+
 a {
     text-decoration: none;
 
@@ -18,6 +26,7 @@ a {
 
     user-select: none;
 }
+
 
 a:link {
     color: #fbf1c7;
@@ -42,6 +51,10 @@ a:hover {
     grid-template-rows: repeat(14, 1fr);
     font-family: Space Mono;
     color: #fbf1c7;
+    background-image: url(../media/pattern.png);
+    background-color: rgb(40, 40, 40);
+    background-blend-mode: overlay;
+    z-index: -1;
 }
 
 #deskicon {
@@ -137,6 +150,26 @@ a:hover {
     padding: 10px;
     border-radius: 10px;
 }
+.tosbtn {
+    font-size: 24px;
+    background-color: #282828;
+    border: #fbf1c7 solid 2px;
+    color: #fbf1c7;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Space Mono;
+}
+
+.tosbtn:hover {
+    color: #665c54;
+}
+
+.tosbtn:active {
+    background-color: #282828;
+    color: #fbf1c7;
+}
 
 .showcase {
     display: flex;
@@ -159,7 +192,7 @@ a:hover {
     left: 0;
     bottom: 0;
     display: flex;
-    z-index: -1;
+    z-index: 0;
 }
 
 .imagemicone {
@@ -178,6 +211,7 @@ a:hover {
     height: 700px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .comms {
@@ -185,6 +219,7 @@ a:hover {
     flex-direction: column;
     width: 1200px;
     height: 800px;
+    z-index: 3;
 }
 
 .portfolio {
@@ -192,6 +227,46 @@ a:hover {
     flex-direction: column;
     width: 1200px;
     height: 800px;
+    z-index: 2;
+}
+
+.extras {
+    z-index: 4;
+    width: 550px;
+    height: 600px;
+    display: none;
+    flex-direction: column;
+}
+
+.bottomtos {
+    flex: 0.3;
+    border-top: #fbf1c7 2px solid;
+    font-size: 56px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.closetoggle {
+    width: 48px;
+    height: 48px;
+    font-size: 20pt;
+    color: #fbf1c7;
+    border-radius: 10px;
+    background-color: #3c3836;
+    border: #fbf1c7 2px solid;
+    margin: auto;
+    justify-self: flex-end;
+}
+
+.closetoggle:hover {
+    background-color: #fbf1c7;
+    color: #3c3836;
+}
+
+.closetoggle:active {
+    background-color: #282828;
+    color: #fbf1c7;
 }
 
 .portfoliob {
