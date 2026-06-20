@@ -324,9 +324,10 @@ a:hover {
 
 #time {
     margin: auto;
-    font-family: Roboto;
+    font-family: "Space Mono";
     font-weight: bold;
     font-size: 18px;
+    padding: 10px;
 }
 
 .commmenu {
