@@ -1,6 +1,6 @@
 
 body {
-    background-color: #282828;
+    background-color: #101720;
     size: full;
     overflow: hidden;
     margin: 0;
@@ -29,11 +29,11 @@ a {
 
 
 a:link {
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
 
 a:visited {
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
 
 a:hover {
@@ -50,10 +50,11 @@ a:hover {
     display: grid;
     grid-template-rows: repeat(14, 1fr);
     font-family: Space Mono;
-    color: #fbf1c7;
-    background-image: url(../media/pattern.png);
-    background-color: rgb(40, 40, 40);
+    color: #f0f8ff;
+    background-image: url(../media/sunset.png);
+    background-color: rgb(95, 95, 95);
     background-blend-mode: overlay;
+    background-size: contain;
     z-index: -1;
 }
 
@@ -72,11 +73,11 @@ a:hover {
 }
 
 #deskicon:hover {
-    border: #fbf1c7 2px dotted;
+    border: #f0f8ff 2px dotted;
 }
 
 #deskicon:active {
-    border: #fbf1c7 2px solid;
+    border: #f0f8ff 2px solid;
 }
 
 #deskicone {
@@ -91,7 +92,7 @@ a:hover {
 }
 
 .separator {
-    background-color: #fbf1c7;
+    background-color: #f0f8ff;
     height: 10px;
     padding: 2px;
     margin: 20px;
@@ -113,7 +114,7 @@ a:hover {
 
 .previewimg {
     border-radius: 10px;
-    border: solid #fbf1c7 3px;
+    border: solid #f0f8ff 3px;
 }
 
 .oferta h1 {
@@ -130,7 +131,7 @@ a:hover {
     font-size: 24px;
     margin: auto 20px auto 20px;
     text-align: left;
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
 
 .commmenu {
@@ -142,9 +143,9 @@ a:hover {
 
 .linkbtn {
     font-size: 24px;
-    background-color: #282828;
-    border: #fbf1c7 solid 2px;
-    color: #3c3836;
+    background-color: #101720;
+    border: #f0f8ff solid 2px;
+    color: #101720;
     font-weight: bold;
     margin: 10px 20px 10px 20px;
     padding: 10px;
@@ -152,9 +153,9 @@ a:hover {
 }
 .tosbtn {
     font-size: 24px;
-    background-color: #282828;
-    border: #fbf1c7 solid 2px;
-    color: #fbf1c7;
+    background-color: #101720;
+    border: #f0f8ff solid 2px;
+    color: #f0f8ff;
     font-weight: bold;
     margin: auto;
     padding: 10px;
@@ -167,8 +168,8 @@ a:hover {
 }
 
 .tosbtn:active {
-    background-color: #282828;
-    color: #fbf1c7;
+    background-color: #101720;
+    color: #f0f8ff;
 }
 
 .showcase {
@@ -183,16 +184,18 @@ a:hover {
 }
 
 .taskbar {
-    border-top: #fbf1c7 2px solid;
-    border-bottom: #fbf1c7 2px solid;
-    background-color: #3c3836;
+    border: #f0f8ff 2px solid;
+    background-color: #101720b0;
     position: fixed;
-    width: 100%;
+    width: 95%;
     height: 48px;
     left: 0;
     bottom: 0;
     display: flex;
-    z-index: 0;
+    z-index: 1;
+    margin: auto 20px 20px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
 }
 
 .imagemicone {
@@ -240,7 +243,7 @@ a:hover {
 
 .bottomtos {
     flex: 0.3;
-    border-top: #fbf1c7 2px solid;
+    border-top: #f0f8ff 2px solid;
     font-size: 56px;
     display: flex;
     flex-direction: row;
@@ -251,22 +254,22 @@ a:hover {
     width: 48px;
     height: 48px;
     font-size: 20pt;
-    color: #fbf1c7;
+    color: #f0f8ff;
     border-radius: 10px;
-    background-color: #3c3836;
-    border: #fbf1c7 2px solid;
+    background-color: #101720;
+    border: #f0f8ff 2px solid;
     margin: auto;
     justify-self: flex-end;
 }
 
 .closetoggle:hover {
-    background-color: #fbf1c7;
-    color: #3c3836;
+    background-color: #f0f8ff;
+    color: #101720;
 }
 
 .closetoggle:active {
-    background-color: #282828;
-    color: #fbf1c7;
+    background-color: #101720;
+    color: #f0f8ff;
 }
 
 .portfoliob {
@@ -277,8 +280,8 @@ a:hover {
 
 .startmenu {
     width: 48px;
-    border-right: #fbf1c7 solid 2px;
-    border-left: #fbf1c7 solid 2px;
+    border-right: #f0f8ff solid 2px;
+
     display: flex;
 }
 
@@ -287,18 +290,18 @@ a:hover {
     max-height: 400px;
     margin: 20px auto 20px auto;
     border-radius: 10px;
-    border: #fbf1c7 solid 4px;
+    border: #f0f8ff solid 4px;
 }
 
 .startbtn {
-    color: #fbf1c7;
+    color: #f0f8ff;
     font-size: 24px;
     margin: auto;
 }
 
 .iconbar {
     flex: 2;
-    border-right: #fbf1c7 solid 2px;
+    border-right: #f0f8ff solid 2px;
 }
 
 .folio {
@@ -315,11 +318,11 @@ a:hover {
 
 .clock {
     flex: 0.1;
-    border-right: #fbf1c7 solid 2px;
+
     text-align: center;
     vertical-align: middle;
     display: flex;
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
 
 #time {
@@ -332,7 +335,7 @@ a:hover {
 
 .commmenu {
     flex: 0.25;
-    border-top: #fbf1c7 2px solid;
+    border-top: #f0f8ff 2px solid;
     font-size: 56px;
     text-align: center;
     display: flex;
@@ -344,14 +347,15 @@ a:hover {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background-color: #3c3836;
-    border: #fbf1c7 solid 2px;
+    background-color: #101720b0;
+    border: #f0f8ff solid 2px;
     border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
 
 .titlebar {
-    border-bottom: #fbf1c7 2px solid;
-    height: 5%;
+    border-bottom: #f0f8ff 2px solid;
+    height: 40px;
     display: flex;
     flex-direction: row;
     cursor: move;
@@ -360,7 +364,7 @@ a:hover {
 .windowbody {
     flex: 2;
     font-family: Space Mono;
-    color: #fbf1c7;
+    color: #f0f8ff;
     margin: 0;
 }
 
@@ -385,13 +389,13 @@ a:hover {
 
 .pfpimg {
     width: 200px;
-    border: #fbf1c7 solid 5px;
+    border: #f0f8ff solid 5px;
     border-radius: 10px;
 }
 
 .social {
     flex: 0.3;
-    border-top: #fbf1c7 2px solid;
+    border-top: #f0f8ff 2px solid;
     font-size: 56px;
     text-align: center;
     display: flex;
@@ -412,7 +416,7 @@ a:hover {
 .title p {
     margin: auto;
     align-self: center;
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
 
 .buttons {
@@ -429,12 +433,12 @@ a:hover {
 
 .buttons p {
     margin: auto;
-    border: #fbf1c7 solid 2px;
+    border: #f0f8ff solid 2px;
     border-radius: 7px;
     width: 20px;
     height: 20px;
     font-size: 2em;
-    color: #fbf1c7;
+    color: #f0f8ff;
     vertical-align: middle;
     text-align: center;
 }
@@ -457,8 +461,8 @@ a:hover {
 }
 
 .langtoggle {
-    background-color: #fbf1c7;
-    border: #fbf1c7 2px solid;
+    background-color: #f0f8ff;
+    border: #f0f8ff 2px solid;
     border-radius: 5px;
     font-family: Space Mono;
     font-size: 12pt;
@@ -476,10 +480,10 @@ a:hover {
 .langtoggle:hover {
     background-color: #665c54;
     border-color: #665c54;
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
 .langtoggle:active {
     background-color: #504945;
     border-color: #504945;
-    color: #fbf1c7;
+    color: #f0f8ff;
 }
