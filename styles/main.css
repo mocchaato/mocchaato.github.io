@@ -487,3 +487,8 @@ a:hover {
     border-color: #504945;
     color: #f0f8ff;
 }
+
+.imagemtitulo {
+    width: 32px;
+    margin: auto;
+}
